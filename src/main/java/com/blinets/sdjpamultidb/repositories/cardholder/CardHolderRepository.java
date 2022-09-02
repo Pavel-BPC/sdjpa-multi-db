@@ -1,4 +1,4 @@
-package com.blinets.sdjpamultidb.repositories;
+package com.blinets.sdjpamultidb.repositories.cardholder;
 
 import com.blinets.sdjpamultidb.domain.cardholder.CreditCardHolder;
 import org.springframework.data.jpa.repository.JpaRepository;
