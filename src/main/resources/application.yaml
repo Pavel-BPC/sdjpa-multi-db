@@ -9,7 +9,6 @@ spring:
       user: cardadmin
       password: password
       url: jdbc:mysql://localhost:3306/card?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
-#      locations: classpath:db/migration/common,classpath:db/migration/{vendor}
 
   cardholder:
     datasource:
@@ -21,7 +20,6 @@ spring:
       user: cardholderadmin
       password: password
       url: jdbc:mysql://localhost:3306/cardholder?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
-#      locations: classpath:db/migration/common,classpath:db/migration/{vendor}
 
   pan:
     datasource:
@@ -33,4 +31,3 @@ spring:
       user: panadmin
       password: password
       url: jdbc:mysql://localhost:3306/pan?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
-#      locations: classpath:db/migration/common,classpath:db/migration/{vendor}
