@@ -8,6 +8,7 @@ import com.blinets.sdjpamultidb.repositories.creditcard.CreditCardRepository;
 import com.blinets.sdjpamultidb.repositories.pan.PanRepository;
 import com.blinets.sdjpamultidb.services.CreditCardService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class CreditCardServiceImpl implements CreditCardService {
@@ -21,6 +22,7 @@ public class CreditCardServiceImpl implements CreditCardService {
         this.panRepository = panRepository;
     }
 
+    @Transactional
     @Override
     public CreditCard saveCreditCard(CreditCard cc) {
         CreditCard creditCardSave = creditCardRepository.save(cc);
@@ -41,5 +43,21 @@ public class CreditCardServiceImpl implements CreditCardService {
                 .build());
 
         return creditCardSave;
+    }
+
+    @Transactional
+    @Override
+    public CreditCard getCreditCardById(Long id) {
+        CreditCard creditCard = creditCardRepository.findById(id).orElseThrow();
+        CreditCardHolder creditCardHolder = cardHolderRepository.findCreditCardHolderByCreditCardId(creditCard.getId()).orElseThrow();
+        CreditCardPan creditCardPan = panRepository.findCreditCardPanByCreditCardId(creditCard.getId()).orElseThrow();
+
+        creditCard.setFirstName(creditCardHolder.getFirstName());
+        creditCard.setLastName(creditCardHolder.getLastName());
+        creditCard.setZipCode(creditCardHolder.getZipCode());
+        creditCard.setCreditCardNumber(creditCardPan.getCreditCardNumber());
+
+
+        return creditCard;
     }
 }

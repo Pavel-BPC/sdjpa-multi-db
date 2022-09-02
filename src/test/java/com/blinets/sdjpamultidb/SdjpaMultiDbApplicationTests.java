@@ -5,6 +5,7 @@ import com.blinets.sdjpamultidb.services.CreditCardService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Rollback;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
@@ -29,6 +30,13 @@ class SdjpaMultiDbApplicationTests {
         assertThat(savedCC).isNotNull();
         assertThat(savedCC.getId()).isNotNull();
         assertThat(savedCC.getCreditCardNumber()).isNotNull();
+
+        CreditCard ccByID = creditCardService.getCreditCardById(savedCC.getId());
+
+        assertThat(ccByID).isNotNull();
+        assertThat(ccByID.getId()).isNotNull();
+        assertThat(ccByID.getCreditCardNumber()).isNotNull();
+        assertThat(ccByID.getFirstName()).isNotNull();
     }
 
     @Test
