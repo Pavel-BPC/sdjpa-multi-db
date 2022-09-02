@@ -5,6 +5,8 @@ spring:
       password: password
       username: carduser
       driver-class-name: com.mysql.cj.jdbc.Driver
+      hikari:
+        poolName: HikariPool-card
     flyway:
       username: cardadmin
       password: password
@@ -16,6 +18,8 @@ spring:
       password: password
       username: cardholderuser
       driver-class-name: com.mysql.cj.jdbc.Driver
+      hikari:
+        poolName: HikariPool-cardholder
     flyway:
       username: cardholderadmin
       password: password
@@ -27,6 +31,8 @@ spring:
       password: password
       username: panuser
       driver-class-name: com.mysql.cj.jdbc.Driver
+      hikari:
+        poolName: HikariPool-pan
     flyway:
       username: panadmin
       password: password
