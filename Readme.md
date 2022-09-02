@@ -1,1 +1,3 @@
-This project provides examples of: Multiple Data Source
+This project provides examples of:
+
+* Multiple Data Source
