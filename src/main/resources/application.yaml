@@ -6,7 +6,7 @@ spring:
       username: carduser
       driver-class-name: com.mysql.cj.jdbc.Driver
     flyway:
-      user: cardadmin
+      username: cardadmin
       password: password
       url: jdbc:mysql://localhost:3306/card?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
 
@@ -17,7 +17,7 @@ spring:
       username: cardholderuser
       driver-class-name: com.mysql.cj.jdbc.Driver
     flyway:
-      user: cardholderadmin
+      username: cardholderadmin
       password: password
       url: jdbc:mysql://localhost:3306/cardholder?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
 
@@ -28,6 +28,6 @@ spring:
       username: panuser
       driver-class-name: com.mysql.cj.jdbc.Driver
     flyway:
-      user: panadmin
+      username: panadmin
       password: password
       url: jdbc:mysql://localhost:3306/pan?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
