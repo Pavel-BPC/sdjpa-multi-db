@@ -5,15 +5,32 @@ spring:
       password: password
       username: carduser
       driver-class-name: com.mysql.cj.jdbc.Driver
+    flyway:
+      user: cardadmin
+      password: password
+      url: jdbc:mysql://localhost:3306/card?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+#      locations: classpath:db/migration/common,classpath:db/migration/{vendor}
+
   cardholder:
     datasource:
       url: jdbc:mysql://localhost:3306/cardholder?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
       password: password
       username: cardholderuser
       driver-class-name: com.mysql.cj.jdbc.Driver
+    flyway:
+      user: cardholderadmin
+      password: password
+      url: jdbc:mysql://localhost:3306/cardholder?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+#      locations: classpath:db/migration/common,classpath:db/migration/{vendor}
+
   pan:
     datasource:
       url: jdbc:mysql://localhost:3306/pan?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
       password: password
       username: panuser
       driver-class-name: com.mysql.cj.jdbc.Driver
+    flyway:
+      user: panadmin
+      password: password
+      url: jdbc:mysql://localhost:3306/pan?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+#      locations: classpath:db/migration/common,classpath:db/migration/{vendor}
